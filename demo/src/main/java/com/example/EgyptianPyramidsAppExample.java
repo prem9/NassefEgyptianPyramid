@@ -133,6 +133,13 @@ public class EgyptianPyramidsAppExample {
       printMenuLine();
     }
   }
+  private void printAllPyramid() {
+    for (int i = 0; i < pyramidArray.length; i++) {
+      printMenuLine();
+      pyramidArray[i].print();
+      printMenuLine();
+    }
+  }
 
   private Boolean executeCommand(Scanner scan, Character command) {
     Boolean success = true;
@@ -141,6 +148,14 @@ public class EgyptianPyramidsAppExample {
       case '1':
         printAllPharaoh();
         break;
+      case '2':
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter specific id for a pharoah: ");
+        int id = in.nextInt();
+        System.out.println("");
+        pharaohArray[id].print();
+      case '3':
+        printAllPyramid();
       case 'q':
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
         break;

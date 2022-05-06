@@ -17,4 +17,18 @@ public class Pyramid {
     name = pyramidName;
     contributors = pyramidContributors;
   }
+  public void print() {
+    System.out.printf("Name %s\n", name);
+    System.out.printf("\tid: %d\n", id);
+    System.out.printf("\tPyramid Contributors: ");
+    for (int i = 0; i < contributors.length; i++)
+    {
+      System.out.println(contributors[i]);
+      if (i != (contributors.length - 1))
+      {
+        System.out.print(", ");
+      }
+    }
+    System.out.println("");
+  }
 }
