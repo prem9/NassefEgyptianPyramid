@@ -1,7 +1,10 @@
 package com.example;
 
 import java.util.*;
+
 import org.json.simple.*;
+//import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
 
 public class EgyptianPyramidsAppExample {
 
@@ -11,7 +14,7 @@ public class EgyptianPyramidsAppExample {
   protected Pharaoh[] pharaohArray;
   protected Pyramid[] pyramidArray;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
     // create and start the app
     EgyptianPyramidsAppExample app = new EgyptianPyramidsAppExample();
     app.start();
@@ -33,19 +36,18 @@ public class EgyptianPyramidsAppExample {
   }
 
   // constructor to initialize the app and read commands
-  public EgyptianPyramidsAppExample() {
+  public EgyptianPyramidsAppExample() throws ParseException {
     // read egyptian pharaohs
     String pharaohFile =
-      "F:/Github/NassefEgyptianPyramid/demo/src/main/java/com/examplepharaoh.json";
+      "F:/Github/NassefEgyptianPyramid/demo/src/main/java/com/example/pharaoh.json";
     JSONArray pharaohJSONArray = JSONFile.readArray(pharaohFile);
-
     // create and intialize the pharaoh array
     initializePharaoh(pharaohJSONArray);
 
     // read pyramids
     String pyramidFile =
-      "F:/Github/NassefEgyptianPyramid/demo/src/main/java/com/pyramid.json";
-    JSONArray pyramidJSONArray = JSONFile.readArray(pyramidFile);
+      "F:/Github/NassefEgyptianPyramid/demo/src/main/java/com/example/pyramid.json";
+    JSONArray  pyramidJSONArray = JSONFile.readArray(pyramidFile);
 
     // create and initialize the pyramid array
     initializePyramid(pyramidJSONArray);
@@ -168,7 +170,12 @@ public class EgyptianPyramidsAppExample {
     System.out.printf("Command\t\tDescription\n");
     System.out.printf("-------\t\t---------------------------------------\n");
     printMenuCommand('1', "List all the pharoahs");
+    printMenuCommand('2', "Display a specific Egyptian pharoah");
+    printMenuCommand('3', "List all the pyramids");
+    printMenuCommand('4', "Display a specific pyramid");
+    printMenuCommand('5', "Display a list of requested pyramids");
     printMenuCommand('q', "Quit");
+
     printMenuLine();
   }
 }
