@@ -143,19 +143,39 @@ public class EgyptianPyramidsAppExample {
 
   private Boolean executeCommand(Scanner scan, Character command) {
     Boolean success = true;
-
+    Scanner in = new Scanner(System.in);
     switch (command) {
       case '1':
         printAllPharaoh();
         break;
       case '2':
-        Scanner in = new Scanner(System.in);
+        
         System.out.print("Enter specific id for a pharoah: ");
         int id = in.nextInt();
         System.out.println("");
         pharaohArray[id].print();
       case '3':
         printAllPyramid();
+      case '4':
+        System.out.print("Enter specific id for a pyramid: ");
+        int Pyrid = in.nextInt();
+        System.out.println("");
+        pyramidArray[Pyrid].print();
+      case '5':
+        System.out.print("How big do you want the list to be: ");
+        int listId[] = new int[in.nextInt()];
+        System.out.println("");
+        for (int i = 0; i < listId.length; i++)
+        {
+          System.out.print("Enter an id for the list: ");
+          listId[i] = in.nextInt();
+          System.out.println("");
+        }
+        for (int i = 0; i < listId.length; i++)
+        {
+          pyramidArray[listId[i]].print();
+        }
+       
       case 'q':
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
         break;
