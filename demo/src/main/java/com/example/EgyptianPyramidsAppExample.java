@@ -175,7 +175,7 @@ public class EgyptianPyramidsAppExample {
         for (int i = 0; i < listId.length; i++) {
           pyramidArray[listId[i]].print();
         }
-        break;
+        break;  
 
       case 'q':
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
